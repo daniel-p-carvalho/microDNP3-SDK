@@ -13,8 +13,9 @@ microdnp3-sdk/
 │   ├── data_core_time.h  # Timekeeping adapter
 │   └── ...
 ├── lib/                  # Pre-compiled static libraries (.a)
-│   ├── soft/             # ARM Cortex-M4 Soft-Float ABI library (libmicrodnp3.a)
-│   └── hard/             # ARM Cortex-M4 Hard-Float ABI library (libmicrodnp3.a)
+│   └── arm/              # ARM Cortex-M4 architectures
+│       ├── soft/         # Soft-Float ABI library (libmicrodnp3.a)
+│       └── hard/         # Hard-Float ABI library (libmicrodnp3.a)
 ├── ports/                # Reference transport implementations (source & headers)
 │   ├── tty_transport.c   # Serial/UART transport port
 │   ├── tcp_transport.c   # TCP/IP transport port
@@ -41,8 +42,8 @@ Add the following directory to your compiler's include search paths:
 ### 3. Linking the Static Library
 
 Link the appropriate library based on your target's FPU hardware configuration:
-• For Software FPU (Soft-Float): link  sdk/lib/soft/libmicrodnp3.a 
-• For Hardware FPU (Hard-Float): link  sdk/lib/hard/libmicrodnp3.a 
+• For Software FPU (Soft-Float): link  sdk/lib/arm/soft/libmicrodnp3.a 
+• For Hardware FPU (Hard-Float): link  sdk/lib/arm/hard/libmicrodnp3.a 
 
 ### 4. Compilation Flags
 
